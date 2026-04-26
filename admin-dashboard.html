@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeafCure — Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <aside class="sidebar" id="admin-sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-avatar" id="admin-avatar">A</div>
+          <div>
+            <div class="sidebar-name" id="admin-name">Admin</div>
+            <div class="sidebar-role">Administrator</div>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <button
+            class="nav-item active"
+            id="nav-overview"
+            onclick="showAdminPage('overview', this)"
+          >
+            Overview
+          </button>
+          <button
+            class="nav-item"
+            id="nav-users"
+            onclick="showAdminPage('users', this)"
+          >
+            Users
+          </button>
+          <button
+            class="nav-item"
+            id="nav-scans"
+            onclick="showAdminPage('scans', this)"
+          >
+            Scans
+          </button>
+        </nav>
+        <button class="nav-item" onclick="adminLogout()">Log out</button>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <h1 id="admin-top-title">Admin Overview</h1>
+        </header>
+
+        <section class="page-section active" id="admin-page-overview">
+          <div class="stats-grid">
+            <div class="stat-card green">
+              <div class="stat-label">Total Users</div>
+              <div class="stat-value" id="admin-total-users">0</div>
+            </div>
+            <div class="stat-card brown">
+              <div class="stat-label">Total Scans</div>
+              <div class="stat-value" id="admin-total-scans">0</div>
+            </div>
+            <div class="stat-card yellow">
+              <div class="stat-label">Diseased Scans</div>
+              <div class="stat-value" id="admin-diseased-scans">0</div>
+            </div>
+            <div class="stat-card red">
+              <div class="stat-label">Latest Scan</div>
+              <div class="stat-value" id="admin-latest-scan">—</div>
+              <div class="stat-change" id="admin-latest-scan-meta">
+                No scans yet
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section" id="admin-page-users">
+          <div class="section-header">
+            <h2>Users</h2>
+            <div class="stat-label" id="admin-users-count">0 users</div>
+          </div>
+
+          <div class="history-filters" style="margin-bottom: 16px">
+            <input
+              id="admin-users-search"
+              class="filter-input"
+              type="text"
+              placeholder="Search users by name, email, or role…"
+              autocomplete="off"
+            />
+            <select id="admin-users-role" class="filter-select"></select>
+            <select id="admin-users-page-size" class="filter-select">
+              <option value="10">10 / page</option>
+              <option value="20" selected>20 / page</option>
+              <option value="50">50 / page</option>
+            </select>
+          </div>
+
+          <div
+            id="admin-users-table"
+            class="card admin-table-card"
+            style="padding: 16px"
+          >
+            Loading users…
+          </div>
+          <div id="admin-users-pagination" class="admin-pagination"></div>
+        </section>
+
+        <section class="page-section" id="admin-page-scans">
+          <div class="section-header">
+            <h2>Scans</h2>
+            <div class="stat-label" id="admin-scans-count">0 scans</div>
+          </div>
+
+          <div class="history-filters" style="margin-bottom: 16px">
+            <input
+              id="admin-scans-search"
+              class="filter-input"
+              type="text"
+              placeholder="Search scans by user, email, diagnosis…"
+              autocomplete="off"
+            />
+            <select id="admin-scans-status" class="filter-select">
+              <option value="all" selected>All</option>
+              <option value="healthy">Healthy</option>
+              <option value="diseased">Diseased</option>
+            </select>
+            <select id="admin-scans-page-size" class="filter-select">
+              <option value="10">10 / page</option>
+              <option value="20" selected>20 / page</option>
+              <option value="50">50 / page</option>
+            </select>
+          </div>
+
+          <div
+            id="admin-scans-table"
+            class="card admin-table-card"
+            style="padding: 16px"
+          >
+            Loading scans…
+          </div>
+          <div id="admin-scans-pagination" class="admin-pagination"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="admin-dashboard.js"></script>
+  </body>
+</html>

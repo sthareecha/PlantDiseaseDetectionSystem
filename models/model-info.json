@@ -1,0 +1,11 @@
+{
+  "notebook": "tomato_v3_final_best (1).ipynb",
+  "modelSaveName": "tomato_model_v3_final.pth",
+  "bestWeightsName": "best_v3.pth",
+  "otherSeenNames": [
+    "tomato_disease_model_final.pth"
+  ],
+  "imgSize": 64,
+  "numClasses": 10,
+  "whereToPutModel": "Put your .pth file in this folder (models/). The server will auto-detect tomato_model_v3_final.pth or best_v3.pth, or you can set MODEL_PATH."
+}

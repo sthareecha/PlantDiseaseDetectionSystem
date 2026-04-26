@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeafCure — Admin Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="auth-wrapper">
+      <div class="auth-panel-left">
+        <div class="panel-content">
+          <div class="brand-mark">
+            <div class="brand-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 2C6.5 2 2 6.5 2 12c0 3.1 1.4 5.9 3.6 7.7" />
+                <path d="M12 2c3.5 0 6.5 1.8 8.3 4.5" />
+                <path d="M12 22c3.1 0 5.9-1.4 7.7-3.6" />
+                <path d="M12 22c-1.5 0-3-.3-4.3-.9" />
+                <path d="M12 12c0-5.5 4.5-10 10-10" />
+                <path d="M12 12c0 5.5-4.5 10-10 10" />
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">LeafCure Admin</span>
+              <span class="brand-sub">Control Panel</span>
+            </div>
+          </div>
+
+          <div class="panel-hero">
+            <h1>Manage your platform</h1>
+            <p>
+              Sign in as an administrator to manage users and review scan
+              activity.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-panel-right">
+        <div class="auth-form-wrap">
+          <div class="auth-form active" id="admin-login-form">
+            <div class="form-header">
+              <h2>Admin login</h2>
+              <p>Restricted access for administrators only</p>
+            </div>
+
+            <div id="admin-login-error" class="alert alert-error hidden"></div>
+
+            <div class="form-group">
+              <label class="form-label" for="admin-email">Admin email</label>
+              <div class="input-wrap">
+                <span class="input-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </span>
+                <input
+                  type="email"
+                  id="admin-email"
+                  class="form-input with-icon"
+                  placeholder="admin@example.com"
+                  autocomplete="email"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="admin-password">Password</label>
+              <div class="input-wrap">
+                <span class="input-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0110 0v4" />
+                  </svg>
+                </span>
+                <input
+                  type="password"
+                  id="admin-password"
+                  class="form-input with-icon"
+                  placeholder="Admin password"
+                  autocomplete="current-password"
+                />
+                <button
+                  type="button"
+                  class="toggle-pw"
+                  onclick="toggleAdminPassword(this)"
+                >
+                  <svg
+                    class="eye-open"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <button
+              class="btn-auth"
+              id="admin-login-btn"
+              onclick="handleAdminLogin()"
+            >
+              <span class="btn-text">Sign In as Admin</span>
+              <div class="btn-spinner hidden"></div>
+            </button>
+
+            <p class="form-switch" style="margin-top: 16px; font-size: 0.85rem">
+              Not an admin? <a href="login.html">Back to user login</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
